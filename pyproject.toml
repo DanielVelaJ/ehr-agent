@@ -1,15 +1,19 @@
-[tool.poetry]
+[project]
 name = "ehr-agent"
 version = "0.1.0"
 description = ""
-authors = ["Daniel Vela Jarquin <daniel.vela.j.1997@hotmail.com>"]
+authors = [
+    {name = "Daniel Vela Jarquin", email = "daniel.vela.j.1997@hotmail.com"}
+]
 readme = "README.md"
-packages = [{include = "ehr_agent", from = "src"}]
+requires-python = ">=3.12"
+dependencies = [
+    "playwright>=1.52.0,<2.0.0",
+    "claude-code-sdk>=0.1.0,<0.2.0"
+]
 
-[tool.poetry.dependencies]
-python = "^3.12"
-playwright = "^1.52.0"
-claude-code-sdk = "^0.1.0"
+[tool.poetry]
+packages = [{include = "ehr_agent", from = "src"}]
 
 [build-system]
 requires = ["poetry-core"]
