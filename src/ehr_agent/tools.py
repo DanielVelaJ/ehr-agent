@@ -7,8 +7,8 @@ from playwright.sync_api import sync_playwright
 from claude_code_sdk import tool
 
 
-@tool
-def navigate(url: str) -> str:
+@tool(schema={"url":"string"})
+def navigate(url: str = "https://www.google.com") -> str:
     """
     Navigate to a URL using Playwright and return the page title.
     
